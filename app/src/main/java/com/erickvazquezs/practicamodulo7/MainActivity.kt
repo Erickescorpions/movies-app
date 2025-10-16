@@ -9,6 +9,7 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.lifecycleScope
 import com.erickvazquezs.practicamodulo7.application.PracticaModulo7Application
 import com.erickvazquezs.practicamodulo7.databinding.ActivityMainBinding
+import com.erickvazquezs.practicamodulo7.ui.fragments.MoviesListFragment
 import com.erickvazquezs.practicamodulo7.utils.Constants
 import kotlinx.coroutines.launch
 
@@ -29,16 +30,9 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        val repository = (application as PracticaModulo7Application).repository
-
-        lifecycleScope.launch {
-            try {
-                val movies = repository.getMovies()
-
-                Log.d(Constants.LOGTAG, movies.toString())
-            } catch(e: Exception) {
-                Log.d(Constants.LOGTAG, "Error: ${e.printStackTrace()}")
-            }
-        }
+        supportFragmentManager.beginTransaction().replace(
+            R.id.container,
+            MoviesListFragment()
+        ).commit()
     }
 }
