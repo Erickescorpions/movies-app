@@ -48,7 +48,6 @@ class MoviesListFragment : Fragment() {
                         ).addToBackStack(null)
                             .commit()
                     }
-
                 }
             } catch (e: Exception) {
                 Toast.makeText(
