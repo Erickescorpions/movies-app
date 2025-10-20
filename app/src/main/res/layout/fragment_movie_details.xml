@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.fragments.MovieDetailsFragment"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/ivPoster"
+        app:layout_constraintTop_toTopOf="@id/gl3"
+        app:layout_constraintStart_toStartOf="@id/gl2"
+
+        android:scaleType="centerCrop"
+        android:layout_width="100dp"
+        android:layout_height="140dp"
+        android:padding="4dp"
+        android:elevation="8dp"
+        />
+
+    <TextView
+        android:id="@+id/tvTitle"
+        app:layout_constraintBottom_toBottomOf="@id/gl1"
+        app:layout_constraintStart_toEndOf="@id/ivPoster"
+        app:layout_constraintEnd_toEndOf="@id/gl7"
+
+        android:layout_marginStart="10dp"
+
+        android:textStyle="bold"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:maxLines="3"
+        android:layout_marginBottom="6dp"
+        />
+
+    <TextView
+        android:id="@+id/tvInformation"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle"
+        app:layout_constraintStart_toEndOf="@id/ivPoster"
+        app:layout_constraintEnd_toEndOf="@id/gl7"
+
+        android:layout_marginStart="10dp"
+
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:maxLines="2"
+        />
+
+    <View
+        android:id="@+id/divider1"
+        app:layout_constraintTop_toBottomOf="@id/gl6"
+        app:layout_constraintStart_toStartOf="@id/gl2"
+        app:layout_constraintEnd_toEndOf="@id/gl7"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="8dp"
+        android:background="?attr/colorOutline"/>
+
+
+    <TextView
+        android:id="@+id/tvSynopsisSection"
+        app:layout_constraintTop_toBottomOf="@id/divider1"
+        app:layout_constraintStart_toStartOf="@id/gl2"
+        android:textSize="18sp"
+        android:text="Synopsis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        />
+
+    <TextView
+        android:id="@+id/tvSynopsis"
+        app:layout_constraintTop_toBottomOf="@id/tvSynopsisSection"
+        app:layout_constraintStart_toStartOf="@id/gl2"
+        app:layout_constraintEnd_toEndOf="@id/gl7"
+        android:layout_marginTop="5dp"
+
+        android:textSize="15sp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:maxLines="8"
+        />
+
+    <TextView
+        android:id="@+id/tvAvailableSection"
+        app:layout_constraintTop_toBottomOf="@id/tvSynopsis"
+        app:layout_constraintStart_toStartOf="@id/gl2"
+        android:textSize="18sp"
+        android:text="Available On"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        />
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/cgPlatforms"
+        app:layout_constraintTop_toBottomOf="@id/tvAvailableSection"
+        app:layout_constraintStart_toStartOf="@id/gl2"
+        app:layout_constraintEnd_toEndOf="@id/gl7"
+
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:singleLine="false"
+        app:chipSpacingHorizontal="6dp"
+        app:chipSpacingVertical="6dp"
+        />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.3"
+        />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.1"
+        />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.15"
+        />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.215"
+        />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.38"
+        />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

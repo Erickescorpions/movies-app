@@ -41,8 +41,12 @@ class MoviesListFragment : Fragment() {
 
                 binding.moviesList.apply {
                     layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-                    adapter = MoviesAdapter(movies) {
-                        Toast.makeText(requireContext(), "Se ha dado click", Toast.LENGTH_SHORT).show()
+                    adapter = MoviesAdapter(movies) { movie ->
+                        requireActivity().supportFragmentManager.beginTransaction().replace(
+                            R.id.container,
+                            MovieDetailsFragment.newInstance(movie.id)
+                        ).addToBackStack(null)
+                            .commit()
                     }
 
                 }

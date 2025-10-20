@@ -16,5 +16,7 @@ data class MovieDto(
     @SerializedName("duration")
     var duration: Float,
     @SerializedName("genre")
-    var genre: String? = null
+    var genre: String? = null,
+    @SerializedName("synopsis")
+    var synopsis: String? = null
 )
