@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import com.bumptech.glide.Glide
 import com.erickvazquezs.practicamodulo7.R
@@ -48,7 +49,7 @@ class MovieDetailsFragment : Fragment() {
         lifecycleScope.launch {
             try {
                 val movie = repository.getMovie(movieId!!)
-                Log.d(Constants.LOGTAG, movie.toString())
+//                Log.d(Constants.LOGTAG, movie.toString())
                 binding.tvTitle.text = movie.name
                 binding.tvSynopsis.text = movie.synopsis
                 binding.tvInformation.text = "${formatDuration(movie.duration)} • ${movie.year} • ${movie.genre}"
@@ -68,7 +69,11 @@ class MovieDetailsFragment : Fragment() {
                 }
 
             } catch (e: Exception) {
-
+                Toast.makeText(
+                    requireContext(),
+                    "Error inesperado: ${e.printStackTrace()}",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
         }
     }

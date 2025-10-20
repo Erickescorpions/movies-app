@@ -52,7 +52,7 @@ class MoviesListFragment : Fragment() {
             } catch (e: Exception) {
                 Toast.makeText(
                     requireContext(),
-                    "Error insperado",
+                    "Error inesperado: ${e.printStackTrace()}",
                     Toast.LENGTH_SHORT
                 ).show()
             }
