@@ -59,6 +59,9 @@ dependencies {
     // Imágenes con bordes redondeados
     implementation(libs.roundedimageview)
 
+    // screen splash
+    implementation(libs.androidx.core.splashscreen)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
